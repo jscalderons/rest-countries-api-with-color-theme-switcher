@@ -9,6 +9,7 @@
         display: inline-block;
         max-height: 400px;
         max-width: 600px;
+        width: 100%;
     }
 
     .detail-layout--content {
@@ -47,7 +48,6 @@
         margin-bottom: 100px;
 
         .detail-layout--flag {
-            width: 95%;
             margin: 0 auto;
         }
 
