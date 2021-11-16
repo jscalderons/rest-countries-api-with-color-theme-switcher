@@ -3,6 +3,7 @@ import { CountriesService } from 'src/app/services/countries.service';
 import { ICountry } from 'src/app/models/country';
 import { FilterPipe } from 'src/app/pipes/filter.pipe';
 import { IFilter } from 'src/app/models/filter';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -19,11 +20,14 @@ export class HomeComponent implements OnInit {
   }
 
   constructor(
+    private titleService: Title,
     private countriesService: CountriesService,
     private filterPipe: FilterPipe
   ) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('where in the word?');
+
     if (this.countries.length == 0) {
       this.countriesService.fetchCountries().subscribe((countries) => {
         this.countriesService.setCountries(countries);

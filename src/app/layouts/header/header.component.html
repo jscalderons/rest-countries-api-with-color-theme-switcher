@@ -1,7 +1,7 @@
-<header class="header">
-    <div class="header-content">
-        <a class="app-action" routerLink="/countries"><h1 class="app-title">Where in the word?</h1></a>
-        <a class="app-action" (click)="toggleThemeMode()">
+<header class="app-header">
+    <div class="app-header--content">
+        <h1 class="app-header--title" routerLink="/countries">where in the word?</h1>
+        <a class="app-header--action" (click)="toggleThemeMode()">
             <i class="bi-{{ switcherIcon }}-fill"></i>
             {{switcherLabel}}
         </a>

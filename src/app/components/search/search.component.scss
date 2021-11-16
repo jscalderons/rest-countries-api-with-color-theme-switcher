@@ -1,21 +1,33 @@
-.app-search {
-    display: flex;
-    align-items: center;
-    padding: 0 2rem;
-    font-weight: 600;
-    background-color: var(--element-color);
-    box-shadow: var(--shadow-lg-color);
-    border-radius: var(--border-radius);
-    color: var(--text-color);
-
-    input {
-        padding: 1rem;
-        background-color: inherit;
-        outline: none;
-        border: none;
-
-        &::placeholder {
-            color: var(--input-color);
+:host {
+    .app-search {
+        display: flex;
+        align-items: center;
+        padding: 0 2rem;
+        font-weight: 600;
+        flex: content;
+        background-color: var(--element-color);
+        box-shadow: var(--shadow-lg-color);
+        border-radius: var(--border-radius);
+        color: var(--text-color);
+    
+        input {
+            padding: 1rem;
+            background-color: inherit;
+            outline: none;
+            border: none;
+            width: 100%;
+    
+            &::placeholder {
+                color: var(--input-color);
+            }
         }
+    }
+
+    @media screen and (min-width: 1440px) {
+        width: 500px;
+    }
+
+    @media screen and (max-width: 375px) {
+        width: 100%;
     }
 }

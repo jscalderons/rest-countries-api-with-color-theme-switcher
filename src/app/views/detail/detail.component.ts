@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap, tap } from 'rxjs/operators';
 import { ICountry } from 'src/app/models/country';
 import { CountriesService } from 'src/app/services/countries.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-detail',
@@ -16,6 +17,7 @@ export class DetailComponent implements OnInit {
   public borderCountries!: ICountry[];
 
   constructor(
+    private titleService: Title,
     private route: ActivatedRoute,
     private router: Router,
     private location: Location,
@@ -32,6 +34,7 @@ export class DetailComponent implements OnInit {
           this.router.navigate(['/not-found']);
         } else {
           this.country = country;
+          this.titleService.setTitle(country.name.toLowerCase());
         }
       }),
       switchMap(country => this.countriesService.fetchCountryByCodeList(country.borders)),
