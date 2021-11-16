@@ -1,0 +1,22 @@
+.app-button {
+    padding: var(--space-vertical) 1.5rem;
+    margin: 0.3rem;
+    background-color: var(--element-color);   
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg-color);
+    cursor: pointer;
+    
+    .app-button--content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        i {
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-right: 0.5rem;
+        }
+    }
+
+}

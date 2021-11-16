@@ -1,0 +1,30 @@
+<app-toolbar>
+    <app-button label="Back" icon="arrow-left" (onClickEvent)="back()"></app-button>
+</app-toolbar>
+
+<div class="detail-layout" *ngIf="!loading">
+    <img class="detail-layout--flag" [src]="country.flag" [alt]="country.name">
+    <div class="detail-layout--content">
+        <h2 class="detail-layout--content-title">{{ country.name }}</h2>
+        <div class="detail-layout--content-body">
+            <div>
+                <p><b>Native Name:</b> {{country.nativeName }}</p>
+                <p><b>Population:</b> {{country.population?.toString() | number: "" }}</p>
+                <p><b>Region:</b> {{country.region }}</p>
+                <p><b>Sub Region:</b> {{country.subregion }}</p>
+                <p><b>Capital:</b> {{country.capital }}</p>
+            </div>
+            <div>
+                <p><b>Top Level Domain:</b> {{ country.topLevelDomain?.join(', ') }}</p>
+                <p><b>Currencies:</b> {{ listToString(country.currencies, 'name') }}</p>
+                <p><b>Sub Region:</b> {{ listToString(country.languages, 'name') }}</p>
+            </div>
+        </div>
+        <div class="detail-layout--content-footer" *ngIf="borderCountries.length">
+            <b>Border Countries:</b>
+            <app-button *ngFor="let borderCountry of borderCountries" 
+                [label]="borderCountry.name" 
+                [routerLink]="['/countries', borderCountry.alpha3Code, 'detail']"></app-button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+.header {
+    width: 100%;
+    height: 75px;
+    background-color: var(--element-color);
+    box-shadow: var(--shadow-lg-color);
+
+    .header-content {
+        height: inherit;
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

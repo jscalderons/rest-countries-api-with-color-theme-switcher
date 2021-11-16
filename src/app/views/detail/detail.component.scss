@@ -1,0 +1,35 @@
+.detail-layout {
+    display: flex;
+    align-items: center;
+    grid-gap: 150px;
+
+    .detail-layout--flag {
+        max-height: 400px;
+    }
+
+    .detail-layout--content {
+        .detail-layout--content-title {
+            font-weight: 800;
+            padding-bottom: 1.8rem;
+        }
+
+        .detail-layout--content-body {
+            padding-bottom: 2.5rem;
+            display: flex;
+
+            div {
+                flex: content;
+            }
+
+            p {
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        .detail-layout--content-footer {
+            b {
+                margin-right: 10px;
+            }
+        }
+    }
+}

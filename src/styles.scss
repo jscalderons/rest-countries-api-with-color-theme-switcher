@@ -1,1 +1,84 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css");
+
+// fuente
+$font-family: 'Nunito Sans';
+
+// Colors
+$dark-mode-elements: hsl(209, 23%, 22%);
+$dark-mode-background: hsl(207, 26%, 17%);
+$dark-mode-input: hsl(0, 0%, 80%);
+$dark-mode-text: hsl(0, 0%, 100%);
+
+$light-mode-elements: hsl(0, 0%, 100%);
+$light-mode-background: hsl(0, 0%, 98%);
+$light-mode-input: hsl(0, 0%, 52%);
+$light-mode-text: hsl(200, 15%, 8%);
+
+$dark-mode-box-shadow-sm: hsla(0, 0, 0, 0.08) 0px 0px 10px;
+$light-mode-box-shadow-sm: hsla(0, 0, 0, 0.08) 0px 0px 10px;
+$dark-mode-box-shadow-lg: hsla(0, 0, 0, 0.15) 0px 0px 5px;
+$light-mode-box-shadow-lg: hsla(0, 0, 0, 0.15) 0px 0px 5px;
+
+// Responsive break point
+$mobile-breakpoint: 375px;
+$desktop-breakpoint: 1440px;
+
+$colors: (
+    --element-color: ($light-mode-elements, $dark-mode-elements),
+    --background-color: ($light-mode-background, $dark-mode-background),
+    --input-color: ($light-mode-input, $dark-mode-input),
+    --text-color: ($light-mode-text, $dark-mode-text),
+    --shadow-sm-color: ($light-mode-box-shadow-sm, $dark-mode-box-shadow-sm),
+    --shadow-lg-color: ($light-mode-box-shadow-lg, $dark-mode-box-shadow-lg),
+);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 300;
+    color: var(--text-color);
+}
+
+body {
+    & {
+        @each $name, $color in $colors {
+            #{$name}: nth($color, 1);
+        }
+    }
+
+    &.dark-theme {
+        @each $name, $color in $colors {
+            #{$name}: nth($color, 2);
+        }
+    }
+
+    
+    --border-radius: 6px;
+    --space-vertical: 6px;
+    --space-horizontal: 14px;
+
+    background-color: var(--background-color);
+}
+
+.app-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.subtitle, b {
+    font-weight: 600;
+}
+
+.paragraph {
+    font-weight: 300;
+}
+
+.app-action {
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}

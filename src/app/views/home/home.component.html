@@ -1,0 +1,16 @@
+<app-toolbar>
+    <app-search (onInputEvent)="setQueryFilter($event)"></app-search>
+    <app-dropdown label="Filter by Region" 
+        [options]="regions"
+        (onSelectEvent)="setRegionFilter($event)"></app-dropdown>
+</app-toolbar>
+<div class="cards-grid">
+    <app-card *ngFor="let country of countries" 
+        [title]="country.name"
+        [image]="country.flag"
+        [routerLink]="[country.alpha3Code.toLowerCase(), 'detail']">
+        <p><b>Population:</b> {{country.population?.toString() | number: "" }}</p>
+        <p><b>Region:</b> {{country.region}}</p>
+        <p><b>Capital:</b> {{country.capital}}</p>
+    </app-card>
+</div>

@@ -1,0 +1,11 @@
+<div class="app-dropdown">
+    <button class="app-dropdown--action" type="button" (click)="toggleDropdownMenu()">
+        <div class="app-dropdown--action-content">
+            {{selected || label}}
+            <i class="bi bi-{{ selected ? 'x-lg' : 'chevron-down' }}"></i>
+        </div>
+    </button>
+    <div class="app-dropdown--menu" [hidden]="!active">
+        <a (click)="selectHandle(opt)" *ngFor="let opt of options">{{opt}}</a>
+    </div>
+</div>
